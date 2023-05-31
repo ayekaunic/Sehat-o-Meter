@@ -23,7 +23,7 @@ class _HeightWidgetState extends State<HeightWidget> {
             children: [
               const Text(
                 "Height",
-                style: TextStyle(fontSize: 25, color: Colors.grey),
+                style: TextStyle(fontSize: 27, color: Colors.grey),
               ),
               const SizedBox(
                 height: 10,

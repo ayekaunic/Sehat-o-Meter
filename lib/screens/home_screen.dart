@@ -29,7 +29,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Sehat-o-Meter'),
+        title: const Text(
+          'Sehat-o-Meter',
+          style: TextStyle(
+            fontSize: 22.5,
+          ),
+        ),
       ),
       body: (SingleChildScrollView(
         child: Container(

@@ -23,7 +23,12 @@ class ScoreScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("BMI Score"),
+        title: const Text(
+          "Sehat-o-Meter",
+          style: TextStyle(
+            fontSize: 22.5,
+          ),
+        ),
       ),
       body: Container(
           padding: const EdgeInsets.all(12),
@@ -34,8 +39,8 @@ class ScoreScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      "Your Score",
-                      style: TextStyle(fontSize: 30, color: Colors.blue),
+                      "Your BMI Score",
+                      style: TextStyle(fontSize: 27, color: Colors.blue),
                     ),
                     const SizedBox(
                       height: 10,
@@ -52,7 +57,7 @@ class ScoreScreen extends StatelessWidget {
                       ],
                       valueWidget: Text(
                         bmiScore.toStringAsFixed(1),
-                        style: const TextStyle(fontSize: 40),
+                        style: const TextStyle(fontSize: 36),
                       ),
                       currentValue: bmiScore.toDouble(),
                       needleColor: Colors.blue,
@@ -62,14 +67,14 @@ class ScoreScreen extends StatelessWidget {
                     ),
                     Text(
                       bmiStatus!,
-                      style: TextStyle(fontSize: 20, color: bmiStatusColor!),
+                      style: TextStyle(fontSize: 18, color: bmiStatusColor!),
                     ),
                     const SizedBox(
                       height: 10,
                     ),
                     Text(
                       bmiInterpretation!,
-                      style: const TextStyle(fontSize: 15),
+                      style: const TextStyle(fontSize: 14),
                     ),
                     const SizedBox(
                       height: 10,
@@ -88,7 +93,7 @@ class ScoreScreen extends StatelessWidget {
                         ElevatedButton(
                             onPressed: () {
                               Share.share(
-                                  "Your BMI is ${bmiScore.toStringAsFixed(1)} at age $age");
+                                  "I just calculated my BMI using Sehat-o-Meter!\n\nResult: ${bmiScore.toStringAsFixed(1)}\nCategory: ${bmiStatus}");
                             },
                             child: const Text("Share")),
                       ],
@@ -100,19 +105,19 @@ class ScoreScreen extends StatelessWidget {
   void setBmiInterpretation() {
     if (bmiScore > 30) {
       bmiStatus = "Obese";
-      bmiInterpretation = "Please work to reduce obesity";
+      bmiInterpretation = "Please work on reducing obesity!";
       bmiStatusColor = Colors.pink;
     } else if (bmiScore >= 25) {
       bmiStatus = "Overweight";
-      bmiInterpretation = "Do regular exercise & reduce the weight";
+      bmiInterpretation = "Exercise regularly to lose weight!";
       bmiStatusColor = Colors.orange;
     } else if (bmiScore >= 18.5) {
       bmiStatus = "Normal";
-      bmiInterpretation = "Enjoy, You are fit";
+      bmiInterpretation = "Enjoy, you are fit!";
       bmiStatusColor = Colors.green;
     } else if (bmiScore < 18.5) {
       bmiStatus = "Underweight";
-      bmiInterpretation = "Try to increase the weight";
+      bmiInterpretation = "Try to increase your weight!";
       bmiStatusColor = Colors.red;
     }
   }
