@@ -1,4 +1,4 @@
-# sehat_o_meter
+# Sehat-o-Meter
 
 A new Flutter project.
 
